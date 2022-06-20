@@ -64,6 +64,7 @@ class UserController extends Controller
                 'user_id' => $whosthere,
                 'quantity' => $request->qty,
                 'invoice' => $request->invoice,
+                'status' => $request->status,
                 'date' => $today,
             ]);
             if ($post) {

@@ -42,6 +42,7 @@
                         <th>User</th>
                         <th>Qty</th>
                         <th>No Nota</th>
+                        <th>Status</th>
                         <th>Date</th>
                     </tr>
                 </thead>
@@ -62,6 +63,13 @@
                         <td>{{ $item->theUser->name }}</td>
                         <td>{{ $item->quantity }}</td>
                         <td>{{ $item->invoice }}</td>
+                        <td>
+                            @if($item->status == 'Jual')
+                            <span class="badge bg-success">{{ $item->status }}</span>
+                            @else
+                            <span class="badge bg-danger text-light">{{ $item->status }}</span>
+                            @endif
+                        </td>
                         <td>{{ $item->date }}</td>
                     </tr>
                     @endforeach
@@ -75,7 +83,8 @@
 <!-- MODAL PARKING -->
 
 <!-- Modal -->
-<div class="modal fade" id="modalCategory" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalCategoryLabel" aria-hidden="true">
+<div class="modal fade" id="modalCategory" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="modalCategoryLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content" style="border-radius: 15px;">
             <div class="modal-header">
@@ -90,8 +99,11 @@
                     </div>
                 </div>
                 <div class="modal-footer flex-nowrap p-0">
-                    <button type="submit" class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-right"><strong>Save</strong></button>
-                    <button type="button" class="btn text-danger btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit"
+                        class="btn btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0 border-right"><strong>Save</strong></button>
+                    <button type="button"
+                        class="btn text-danger btn-lg btn-link fs-6 text-decoration-none col-6 m-0 rounded-0"
+                        data-bs-dismiss="modal">Cancel</button>
                 </div>
             </form>
         </div>

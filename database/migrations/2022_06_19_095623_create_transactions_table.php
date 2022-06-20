@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('quantity');
             $table->string('invoice');
             $table->string('date');
+            $table->string('status');
             $table->timestamps();
         });
     }
