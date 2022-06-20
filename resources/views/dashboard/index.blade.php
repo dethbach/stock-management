@@ -159,7 +159,8 @@
                         </select>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Nama Item" required>
+                        <input type="text" class="form-control" id="name" name="name" autocomplete="off"
+                            placeholder="Nama Item" required>
                         <label for="name">Nama Item</label>
                     </div>
                     <div class="form-floating mb-3">
